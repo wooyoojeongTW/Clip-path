@@ -1,0 +1,89 @@
+*{box-sizing: border-box;}
+body{
+   color: #333;
+   margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+.hexagon .shape img{
+    /* display: none; */
+}
+.hexagon .shape .caption{
+    /* display: none; */
+}
+.frame{
+    display: flex;
+    gap: 40px;
+}
+.hexagon {
+    /* border: 1px solid #000; */
+    width: 400px;
+    height: 450px;
+    position: relative;
+    transition: 0.5s;
+}
+.shape{
+    clip-path: polygon(50% 0, 100% 30%, 100% 70%, 50% 100%, 0 70%, 0 30%);
+    /* border: 1px solid pink; */
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    overflow: hidden;
+
+    /* background-color: pink; */
+}
+.shape img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    object-position: right;
+}
+.hexagon .caption {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    color: #fff;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.hexagon:hover .caption{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+.hexagon .caption h2{
+    font-size: 2em;
+}
+.hexagon .caption{
+    background: linear-gradient(to top, royalblue,transparent);
+}
+.hexagon:hover {
+    transform: translateY(-60px);
+}
+.hexagon::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    background: radial-gradient(rgba(0,0,0,0.3),transparent,transparent);
+    transition: 0.5s;
+    bottom: -70px;
+}
+.hexagon:hover:before{
+opacity: 0.6;
+transform: scale(0.8);
+bottom: -130px;
+}
